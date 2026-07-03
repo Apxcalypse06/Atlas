@@ -1,0 +1,536 @@
+{
+  "created_at": "2026-06-30T08:37:06.644929+00:00",
+  "artifact": "Atlas.zip",
+  "entrypoint": "START_HERE.md",
+  "recommended_read_order": [
+    "START_HERE.md",
+    "GOVERNANCE/CHANGE_PROTOCOL.md",
+    "BACKUPS/README.md",
+    "README/README.md",
+    "Architecture/ATLAS_ARCHITECTURE.md",
+    "Architecture/ATLAS_MEMORY_ARCHITECTURE.md",
+    "Current/PAC-007.2/STATUS.md",
+    "Current/PAC-007.3/STATUS.md",
+    "Current/PAC-008/STATUS.md",
+    "Current/PAC-009/STATUS.md",
+    "Current/ATLAS-GOV-001/STATUS.md",
+    "Current/ATLAS-GOV-002/STATUS.md",
+    "Current/ATLAS-GOV-003/STATUS.md",
+    "Current/ATLAS-GOV-004/STATUS.md",
+    "Current/ATLAS-GOV-005/STATUS.md",
+    "Current/ATLAS-GOV-006/STATUS.md",
+    "Current/ATLAS-GOV-007/STATUS.md",
+    "Current/ATLAS-GOV-008/STATUS.md",
+    "Current/ATLAS-GOV-009/STATUS.md",
+    "Current/ATLAS-GOV-010/STATUS.md",
+    "MANIFEST.json",
+    "Handover/Atlas_PAC_Handover_Current_Context_v2.txt"
+  ],
+  "canonical_pipeline": [
+    {
+      "pac": "PAC-005",
+      "role": "Import Conversation"
+    },
+    {
+      "pac": "PAC-006",
+      "role": "Extract Candidate Knowledge"
+    },
+    {
+      "pac": "PAC-007.1",
+      "role": "Create Validation Artifact"
+    },
+    {
+      "pac": "PAC-007.2",
+      "role": "Select + Classify Knowledge"
+    },
+    {
+      "pac": "PAC-007.3",
+      "role": "Commit to Memory"
+    },
+    {
+      "pac": "PAC-008",
+      "role": "Generate Cognitive Views & Handover"
+    },
+    {
+      "pac": "PAC-009",
+      "role": "Review & Maintain Memory"
+    }
+  ],
+  "backup_policy": {
+    "directory": "BACKUPS/",
+    "tool": "tools/atlas_backup.py",
+    "enforced_from": "ATLAS-GOV-003",
+    "purpose": "Create rollback snapshots before future structural Atlas changes."
+  },
+  "next_task": "No active PAC - define next Atlas roadmap item",
+  "governance_patch_map": [
+    {
+      "legacy": "PAC-007.2.1",
+      "current": "ATLAS-GOV-001",
+      "title": "Entrypoint & Resume Protocol"
+    },
+    {
+      "legacy": "PAC-007.2.2",
+      "current": "ATLAS-GOV-002",
+      "title": "Governance Enforcement Protocol"
+    },
+    {
+      "legacy": "PAC-007.2.3",
+      "current": "ATLAS-GOV-003",
+      "title": "Backup & Rollback Protocol"
+    },
+    {
+      "legacy": "PAC-007.2.4",
+      "current": "ATLAS-GOV-004",
+      "title": "Generated Entrypoint Protocol"
+    },
+    {
+      "legacy": "PAC-007.2.5",
+      "current": "ATLAS-GOV-005",
+      "title": "Canonical Pipeline Alignment"
+    }
+  ],
+  "status": {
+    "PAC-001": "DONE",
+    "PAC-002": "DONE",
+    "PAC-003": "DONE",
+    "PAC-004": "DONE",
+    "PAC-005": "DONE",
+    "PAC-006": "DONE",
+    "PAC-007.1": "DONE",
+    "PAC-007.2": "DONE",
+    "PAC-007.2.1": "RECLASSIFIED",
+    "PAC-007.2.2": "RECLASSIFIED",
+    "PAC-007.2.3": "RECLASSIFIED",
+    "PAC-007.2.4": "RECLASSIFIED",
+    "PAC-007.2.5": "RECLASSIFIED",
+    "PAC-007.3": "DONE",
+    "PAC-008": "DONE",
+    "PAC-009": "DONE",
+    "ATLAS-GOV-001": "DONE",
+    "ATLAS-GOV-002": "DONE",
+    "ATLAS-GOV-003": "DONE",
+    "ATLAS-GOV-004": "DONE",
+    "ATLAS-GOV-005": "DONE",
+    "ATLAS-GOV-006": "DONE",
+    "ATLAS-GOV-007": "DONE",
+    "ATLAS-GOV-008": "DONE",
+    "ATLAS-GOV-009": "DONE",
+    "ATLAS-GOV-010": "DONE"
+  },
+  "included_files": {
+    "PAC-001": [
+      "Releases/PAC-001/pac-cli-pac001-refactor.zip",
+      "Releases/PAC-001/pac-001-qa-docs.zip"
+    ],
+    "PAC-002": [
+      "Releases/PAC-002/pac-cli-pac002-1-stabilized.zip",
+      "Releases/PAC-002/pac-002-qa-docs.zip"
+    ],
+    "PAC-003": [
+      "Releases/PAC-003/pac-cli-pac003-inspect-stabilized.zip",
+      "Releases/PAC-003/pac-003-qa-docs.zip"
+    ],
+    "PAC-004": [
+      "Releases/PAC-004/pac-cli-pac004-memory-add.zip",
+      "Releases/PAC-004/pac-004-qa-docs.zip"
+    ],
+    "PAC-005": [
+      "Releases/PAC-005/pac-cli-pac005-1-atomic-import.zip",
+      "Releases/PAC-005/pac-005-1-qa-docs.zip"
+    ],
+    "PAC-006": [
+      "Releases/PAC-006/pac-cli-pac006-session-analyze.zip",
+      "Releases/PAC-006/pac-006-qa-docs.zip"
+    ],
+    "PAC-007.1": [
+      "Releases/PAC-007.1/pac-cli-pac0071-session-validate-finalized.zip",
+      "Releases/PAC-007.1/pac-cli-pac0071-qa-package.zip"
+    ],
+    "PAC-007.2": [
+      "Releases/PAC-007.2/pac-cli-pac0072-selection-classification.zip",
+      "Releases/PAC-007.2/pac-cli-pac0072-qa-package.zip"
+    ],
+    "PAC-007.2.1": [
+      "Releases/PAC-007.2.1/atlas-pac00721-entrypoint-resume-protocol.zip",
+      "Releases/PAC-007.2.1/atlas-pac00721-qa-package.zip"
+    ],
+    "PAC-007.2.2": [
+      "Releases/PAC-007.2.2/atlas-pac00722-governance-enforcement.zip",
+      "Releases/PAC-007.2.2/atlas-pac00722-qa-package.zip"
+    ],
+    "PAC-007.2.3": [
+      "Releases/PAC-007.2.3/atlas-pac00723-backup-rollback.zip",
+      "Releases/PAC-007.2.3/atlas-pac00723-qa-package.zip"
+    ],
+    "PAC-007.2.4": [
+      "Releases/PAC-007.2.4/atlas-pac00724-generated-entrypoint.zip",
+      "Releases/PAC-007.2.4/atlas-pac00724-qa-package.zip"
+    ],
+    "PAC-007.2.5": [
+      "Releases/PAC-007.2.5/atlas-pac00725-canonical-pipeline.zip",
+      "Releases/PAC-007.2.5/atlas-pac00725-qa-package.zip"
+    ],
+    "PAC-007.3": [
+      "Releases/PAC-007.3/pac-cli-pac0073-memory-commit.zip",
+      "Releases/PAC-007.3/pac-cli-pac0073-qa-package.zip"
+    ],
+    "PAC-008": [
+      "Releases/PAC-008/pac-cli-pac008-cognitive-views-handover.zip",
+      "Releases/PAC-008/pac-cli-pac008-qa-package.zip"
+    ],
+    "PAC-009": [
+      "Releases/PAC-009/pac-cli-pac009-memory-review-maintenance.zip",
+      "Releases/PAC-009/pac-cli-pac009-qa-package.zip"
+    ],
+    "ATLAS-GOV-001": [
+      "Releases/ATLAS-GOV-001/atlas-gov-001-entrypoint-resume-protocol.zip",
+      "Releases/ATLAS-GOV-001/atlas-gov-001-qa-package.zip"
+    ],
+    "ATLAS-GOV-002": [
+      "Releases/ATLAS-GOV-002/atlas-gov-002-governance-enforcement.zip",
+      "Releases/ATLAS-GOV-002/atlas-gov-002-qa-package.zip"
+    ],
+    "ATLAS-GOV-003": [
+      "Releases/ATLAS-GOV-003/atlas-gov-003-backup-rollback.zip",
+      "Releases/ATLAS-GOV-003/atlas-gov-003-qa-package.zip"
+    ],
+    "ATLAS-GOV-004": [
+      "Releases/ATLAS-GOV-004/atlas-gov-004-generated-entrypoint.zip",
+      "Releases/ATLAS-GOV-004/atlas-gov-004-qa-package.zip"
+    ],
+    "ATLAS-GOV-005": [
+      "Releases/ATLAS-GOV-005/atlas-gov-005-canonical-pipeline.zip",
+      "Releases/ATLAS-GOV-005/atlas-gov-005-qa-package.zip"
+    ],
+    "ATLAS-GOV-006": [
+      "Releases/ATLAS-GOV-006/atlas-gov-006-governance-patch-reclassification.zip",
+      "Releases/ATLAS-GOV-006/atlas-gov-006-qa-package.zip"
+    ],
+    "ATLAS-GOV-007": [
+      "Releases/ATLAS-GOV-007/atlas-gov-007-legacy-current-cleanup.zip",
+      "Releases/ATLAS-GOV-007/atlas-gov-007-qa-package.zip"
+    ],
+    "ATLAS-GOV-008": [
+      "Releases/ATLAS-GOV-008/atlas-gov-008-pac-status-closure.zip",
+      "Releases/ATLAS-GOV-008/atlas-gov-008-qa-package.zip"
+    ],
+    "ATLAS-GOV-009": [
+      "Releases/ATLAS-GOV-009/atlas-gov-009-memory-feedback-rule.zip",
+      "Releases/ATLAS-GOV-009/atlas-gov-009-qa-package.zip"
+    ],
+    "ATLAS-GOV-010": [
+      "Releases/ATLAS-GOV-010/atlas-gov-010-transfer-package-backup-exclusion.zip",
+      "Releases/ATLAS-GOV-010/atlas-gov-010-qa-package.zip"
+    ]
+  },
+  "missing_files": {
+    "PAC-001": [],
+    "PAC-002": [],
+    "PAC-003": [],
+    "PAC-004": [],
+    "PAC-005": [],
+    "PAC-006": [],
+    "PAC-007.1": [],
+    "PAC-007.2": [],
+    "PAC-007.2.1": [],
+    "PAC-007.2.2": [],
+    "PAC-007.2.3": [],
+    "PAC-007.2.4": [],
+    "PAC-007.2.5": [],
+    "PAC-007.3": [],
+    "PAC-008": [],
+    "PAC-009": [],
+    "ATLAS-GOV-001": [],
+    "ATLAS-GOV-002": [],
+    "ATLAS-GOV-003": [],
+    "ATLAS-GOV-004": [],
+    "ATLAS-GOV-005": [],
+    "ATLAS-GOV-006": [],
+    "ATLAS-GOV-007": [],
+    "ATLAS-GOV-008": [],
+    "ATLAS-GOV-009": [],
+    "ATLAS-GOV-010": []
+  },
+  "updated_at": "2026-07-03T10:16:00+00:00",
+  "architecture_update": {
+    "version": "v0.7.1-architecture-updated",
+    "description": "Clarifies that Atlas currently contains continuity machinery but not yet persistent cognitive memory files.",
+    "added": [
+      "Architecture/ATLAS_MEMORY_ARCHITECTURE.md"
+    ],
+    "updated": [
+      "README/README.md",
+      "Architecture/ATLAS_ARCHITECTURE.md",
+      "Current/PAC-007.2/STATUS.md"
+    ]
+  },
+  "pac_007_2_update": {
+    "version": "v0.7.2-feature-complete",
+    "description": "Adds PAC-007.2 knowledge selection and classification artifacts without memory commit.",
+    "added": [
+      "Releases/PAC-007.2/pac-cli-pac0072-selection-classification.zip",
+      "Releases/PAC-007.2/pac-cli-pac0072-qa-package.zip"
+    ],
+    "status": "DONE"
+  },
+  "entrypoint_update": {
+    "version": "v0.7.2.1-entrypoint",
+    "description": "Adds a human-readable project resume entrypoint for future assistants.",
+    "added": [
+      "START_HERE.md",
+      "Current/PAC-007.2.1/STATUS.md",
+      "Releases/PAC-007.2.1/atlas-pac00721-entrypoint-resume-protocol.zip",
+      "Releases/PAC-007.2.1/atlas-pac00721-qa-package.zip"
+    ],
+    "why": "Atlas needed a single obvious file explaining how to resume the project and what to read first.",
+    "status": "DONE"
+  },
+  "governance_enforcement_update": {
+    "version": "v0.7.2.2-governance-enforcement",
+    "description": "Adds a mandatory change protocol and local validator for structural Atlas changes.",
+    "added": [
+      "GOVERNANCE/CHANGE_PROTOCOL.md",
+      "tools/atlas_validate.py",
+      "Current/PAC-007.2.2/STATUS.md",
+      "Releases/PAC-007.2.2/atlas-pac00722-governance-enforcement.zip",
+      "Releases/PAC-007.2.2/atlas-pac00722-qa-package.zip"
+    ],
+    "updated": [
+      "START_HERE.md",
+      "README/README.md",
+      "MANIFEST.json"
+    ],
+    "why": "Atlas needed executable governance so future structural changes cannot remain untracked.",
+    "status": "DONE"
+  },
+  "backup_rollback_update": {
+    "version": "v0.7.2.3-backup-rollback",
+    "description": "Adds rollback backup protocol and a local backup snapshot tool for future structural Atlas changes.",
+    "added": [
+      "BACKUPS/README.md",
+      "tools/atlas_backup.py",
+      "Current/PAC-007.2.3/STATUS.md",
+      "Releases/PAC-007.2.3/atlas-pac00723-backup-rollback.zip",
+      "Releases/PAC-007.2.3/atlas-pac00723-qa-package.zip"
+    ],
+    "updated": [
+      "GOVERNANCE/CHANGE_PROTOCOL.md",
+      "tools/atlas_validate.py",
+      "START_HERE.md",
+      "README/README.md",
+      "MANIFEST.json"
+    ],
+    "why": "Atlas needed a rollback snapshot mechanism in addition to release archives.",
+    "status": "DONE"
+  },
+  "generated_entrypoint_update": {
+    "version": "v0.7.2.4-generated-entrypoint",
+    "description": "Makes START_HERE.md generated from MANIFEST.json and validated against the generator output.",
+    "added": [
+      "tools/atlas_generate_start_here.py",
+      "Current/PAC-007.2.4/STATUS.md",
+      "Releases/PAC-007.2.4/atlas-pac00724-generated-entrypoint.zip",
+      "Releases/PAC-007.2.4/atlas-pac00724-qa-package.zip"
+    ],
+    "updated": [
+      "START_HERE.md",
+      "GOVERNANCE/CHANGE_PROTOCOL.md",
+      "tools/atlas_validate.py",
+      "README/README.md",
+      "MANIFEST.json"
+    ],
+    "why": "Atlas needed the resume entrypoint to stay synchronized automatically after each PAC or patch PAC.",
+    "status": "DONE"
+  },
+  "canonical_pipeline_update": {
+    "version": "v0.7.2.5-canonical-pipeline",
+    "description": "Aligns Atlas documentation and generated entrypoint with the canonical PAC pipeline.",
+    "added": [
+      "Current/PAC-007.2.5/STATUS.md",
+      "Releases/PAC-007.2.5/atlas-pac00725-canonical-pipeline.zip",
+      "Releases/PAC-007.2.5/atlas-pac00725-qa-package.zip"
+    ],
+    "updated": [
+      "MANIFEST.json",
+      "Architecture/ATLAS_ARCHITECTURE.md",
+      "README/README.md",
+      "tools/atlas_generate_start_here.py",
+      "START_HERE.md"
+    ],
+    "why": "Atlas needed one explicit PAC order: import conversation, extract candidate knowledge, validate, select/classify, commit memory, generate cognitive views and handover.",
+    "status": "DONE"
+  },
+  "pac_007_3_update": {
+    "version": "v0.7.3-feature-complete",
+    "description": "Adds PAC-007.3 memory commit from selected candidates into user, project, and shared memory domains.",
+    "added": [
+      "Current/PAC-007.3/STATUS.md",
+      "Releases/PAC-007.3/pac-cli-pac0073-memory-commit.zip",
+      "Releases/PAC-007.3/pac-cli-pac0073-qa-package.zip"
+    ],
+    "updated": [
+      "README/README.md",
+      "Architecture/ATLAS_MEMORY_ARCHITECTURE.md",
+      "MANIFEST.json",
+      "START_HERE.md"
+    ],
+    "why": "Atlas needed to turn PAC-007.2 selected candidates into committed memory entries before PAC-008 can generate cognitive views and handovers.",
+    "status": "DONE"
+  },
+  "atlas_gov_006_update": {
+    "version": "atlas-gov-006-reclassification",
+    "description": "Reclassifies governance patches from PAC-007.2.x into the ATLAS-GOV namespace.",
+    "added": [
+      "Current/ATLAS-GOV-001/STATUS.md",
+      "Current/ATLAS-GOV-002/STATUS.md",
+      "Current/ATLAS-GOV-003/STATUS.md",
+      "Current/ATLAS-GOV-004/STATUS.md",
+      "Current/ATLAS-GOV-005/STATUS.md",
+      "Current/ATLAS-GOV-006/STATUS.md",
+      "Releases/ATLAS-GOV-001/atlas-gov-001-entrypoint-resume-protocol.zip",
+      "Releases/ATLAS-GOV-001/atlas-gov-001-qa-package.zip",
+      "Releases/ATLAS-GOV-002/atlas-gov-002-governance-enforcement.zip",
+      "Releases/ATLAS-GOV-002/atlas-gov-002-qa-package.zip",
+      "Releases/ATLAS-GOV-003/atlas-gov-003-backup-rollback.zip",
+      "Releases/ATLAS-GOV-003/atlas-gov-003-qa-package.zip",
+      "Releases/ATLAS-GOV-004/atlas-gov-004-generated-entrypoint.zip",
+      "Releases/ATLAS-GOV-004/atlas-gov-004-qa-package.zip",
+      "Releases/ATLAS-GOV-005/atlas-gov-005-canonical-pipeline.zip",
+      "Releases/ATLAS-GOV-005/atlas-gov-005-qa-package.zip",
+      "Releases/ATLAS-GOV-006/atlas-gov-006-governance-patch-reclassification.zip",
+      "Releases/ATLAS-GOV-006/atlas-gov-006-qa-package.zip"
+    ],
+    "updated": [
+      "GOVERNANCE/CHANGE_PROTOCOL.md",
+      "README/README.md",
+      "MANIFEST.json",
+      "tools/atlas_generate_start_here.py",
+      "tools/atlas_validate.py",
+      "START_HERE.md"
+    ],
+    "why": "Governance changes should be tracked separately from the cognitive continuity PAC pipeline.",
+    "status": "DONE"
+  },
+  "atlas_gov_007_update": {
+    "version": "atlas-gov-007-legacy-current-cleanup",
+    "description": "Removes reclassified legacy PAC-007.2.x status folders from the active Current surface while preserving historical release archives.",
+    "added": [
+      "Current/ATLAS-GOV-007/STATUS.md",
+      "Releases/ATLAS-GOV-007/atlas-gov-007-legacy-current-cleanup.zip",
+      "Releases/ATLAS-GOV-007/atlas-gov-007-qa-package.zip"
+    ],
+    "updated": [
+      "README/README.md",
+      "MANIFEST.json",
+      "tools/atlas_generate_start_here.py",
+      "START_HERE.md"
+    ],
+    "removed": [
+      "Current/PAC-007.2.1/STATUS.md",
+      "Current/PAC-007.2.2/STATUS.md",
+      "Current/PAC-007.2.3/STATUS.md",
+      "Current/PAC-007.2.4/STATUS.md",
+      "Current/PAC-007.2.5/STATUS.md"
+    ],
+    "why": "The legacy current folders duplicated reclassified ATLAS-GOV status folders and made inactive governance IDs look like active PAC work.",
+    "status": "DONE"
+  },
+  "pac_008_update": {
+    "version": "v0.8.0-feature-complete",
+    "description": "Adds PAC-008 cognitive view and handover generation from committed memory.",
+    "added": [
+      "Current/PAC-008/STATUS.md",
+      "Releases/PAC-008/pac-cli-pac008-cognitive-views-handover.zip",
+      "Releases/PAC-008/pac-cli-pac008-qa-package.zip"
+    ],
+    "updated": [
+      "README/README.md",
+      "Architecture/ATLAS_MEMORY_ARCHITECTURE.md",
+      "MANIFEST.json",
+      "tools/atlas_generate_start_here.py",
+      "START_HERE.md"
+    ],
+    "why": "Atlas needed to turn committed PAC-007.3 memory into generated cognitive views and a current handover.",
+    "status": "DONE"
+  },
+  "atlas_gov_008_update": {
+    "version": "atlas-gov-008-pac-status-closure",
+    "description": "Defines DONE as the final status for completed PACs and promotes PAC-007.2, PAC-007.3, and PAC-008.",
+    "added": [
+      "Current/ATLAS-GOV-008/STATUS.md",
+      "Releases/ATLAS-GOV-008/atlas-gov-008-pac-status-closure.zip",
+      "Releases/ATLAS-GOV-008/atlas-gov-008-qa-package.zip"
+    ],
+    "updated": [
+      "Current/PAC-007.2/STATUS.md",
+      "Current/PAC-007.3/STATUS.md",
+      "Current/PAC-008/STATUS.md",
+      "GOVERNANCE/CHANGE_PROTOCOL.md",
+      "README/README.md",
+      "MANIFEST.json",
+      "tools/atlas_generate_start_here.py",
+      "START_HERE.md"
+    ],
+    "why": "Completed functional PACs with implementation, releases, QA packages, manifest alignment, generated entrypoint alignment, and passing Atlas validation should not remain in a temporary FEATURE_COMPLETE state.",
+    "status": "DONE"
+  },
+  "pac_009_update": {
+    "version": "v0.9.0-done",
+    "description": "Adds PAC-009 memory review and maintenance commands for committed memory entries.",
+    "added": [
+      "Current/PAC-009/STATUS.md",
+      "Releases/PAC-009/pac-cli-pac009-memory-review-maintenance.zip",
+      "Releases/PAC-009/pac-cli-pac009-qa-package.zip"
+    ],
+    "updated": [
+      "README/README.md",
+      "Architecture/ATLAS_MEMORY_ARCHITECTURE.md",
+      "MANIFEST.json",
+      "tools/atlas_generate_start_here.py",
+      "START_HERE.md"
+    ],
+    "why": "Atlas needed a controlled way to review, update, deprecate, and merge committed memory entries without physical deletion.",
+    "status": "DONE"
+  },
+  "atlas_gov_009_update": {
+    "version": "atlas-gov-009-memory-feedback-rule",
+    "description": "Defines assistant feedback expectations for stable user information recorded in Atlas memory.",
+    "added": [
+      "Current/ATLAS-GOV-009/STATUS.md",
+      "Releases/ATLAS-GOV-009/atlas-gov-009-memory-feedback-rule.zip",
+      "Releases/ATLAS-GOV-009/atlas-gov-009-qa-package.zip"
+    ],
+    "updated": [
+      "GOVERNANCE/CHANGE_PROTOCOL.md",
+      "README/README.md",
+      "MANIFEST.json",
+      "tools/atlas_generate_start_here.py",
+      "START_HERE.md"
+    ],
+    "why": "Future assistants should not repeatedly ask permission to keep stable user information, but they must clearly say whether they recorded it in Atlas.",
+    "status": "DONE"
+  },
+  "atlas_gov_010_update": {
+    "version": "atlas-gov-010-transfer-package-backup-exclusion",
+    "description": "Fixes recursive backup growth and adds a lightweight assistant handoff package.",
+    "added": [
+      "Current/ATLAS-GOV-010/STATUS.md",
+      "tools/atlas_handoff.py",
+      "Releases/ATLAS-GOV-010/atlas-gov-010-transfer-package-backup-exclusion.zip",
+      "Releases/ATLAS-GOV-010/atlas-gov-010-qa-package.zip"
+    ],
+    "updated": [
+      "BACKUPS/README.md",
+      "GOVERNANCE/CHANGE_PROTOCOL.md",
+      "README/README.md",
+      "MANIFEST.json",
+      "tools/atlas_backup.py",
+      "tools/atlas_generate_start_here.py",
+      "tools/atlas_validate.py",
+      "START_HERE.md"
+    ],
+    "why": "The local workspace should retain rollback backups, while new assistants should receive a lightweight package that excludes BACKUPS and local caches.",
+    "status": "DONE"
+  }
+}
