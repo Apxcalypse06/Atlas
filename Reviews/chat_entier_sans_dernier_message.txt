@@ -1,0 +1,77 @@
+Utilisateur:
+Please perform an independent QA review of PAC-007.1.
+
+Scope:
+- PAC-007.1 is Feature Complete, not DONE.
+- Do not evaluate PAC-007.2 or future work.
+- Review only the implementation ZIP and QA package attached.
+
+Artifacts:
+- pac-cli-pac0071-session-validate-implementation.zip
+- pac-cli-pac0071-qa-package.zip
+
+Please verify:
+1. The implementation starts from PAC-006.
+2. The command `pac session validate` is implemented correctly.
+3. The command creates `sessions/validation/SES-....validation.json`.
+4. Existing artifacts are not modified.
+5. `user/memory.json` is not modified.
+6. The pipeline remains append-only.
+7. Tests are present and relevant.
+8. The documented test output is credible.
+9. QA documentation is complete.
+10. No PAC-007.2 functionality has been introduced.
+
+Expected verdict format:
+- APPROVED
+- APPROVED WITH NOTES
+- CHANGES REQUESTED
+
+Please include:
+- Summary of reviewed artifacts
+- Checks performed
+- Issues found, if any
+- Final verdict
+
+
+Assistant:
+I’ll inspect both ZIPs directly, compare implementation contents against the QA package claims, and focus only on PAC-007.1 acceptance criteria and regressions against PAC-006.
+
+Assistant:
+Initial findings: the full implementation test suite passes locally, and the new command path is present. I’m checking whether the implementation’s ZIP mutation behavior conflicts with the append-only and “existing artifacts” requirements.
+
+Assistant:
+## Final verdict: APPROVED WITH NOTES
+
+Summary of reviewed artifacts
+- pac-cli-pac0071-session-validate-implementation.zip
+- pac-cli-pac0071-qa-package.zip
+
+Checks performed
+- Inspected implementation source, tests, and QA docs.
+- Ran full test suite: 52 passed locally.
+- Exercised validation flow independently.
+- Verified validation artifact creation:
+  sessions/validation/SES-....validation.json
+- Compared ZIP contents before/after validation.
+- Checked for PAC-007.2-style behavior.
+
+Findings
+- `pac session validate` is implemented and wired into CLI.
+- Requires capsule path, --session, and --validated-by.
+- Requires an existing analysis artifact.
+- Creates the expected validation artifact.
+- Does not modify:
+  - source session artifact
+  - analysis artifact
+  - user/memory.json
+- No PAC-007.2 functionality found.
+- Tests are present, relevant, and credible.
+- QA package is complete and aligned.
+
+Notes
+- Existing metadata/log artifacts (MANIFEST.json and logs/changelog.md) are updated in an append-only manner.
+- I could not cryptographically prove the implementation started from PAC-006 without the PAC-006 ZIP, but the structure is consistent.
+
+Verdict
+APPROVED WITH NOTES
