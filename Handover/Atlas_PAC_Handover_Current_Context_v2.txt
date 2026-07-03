@@ -1,0 +1,44 @@
+Atlas / PAC Conversation Handover (Updated)
+
+Objective of Atlas
+
+Atlas aims to ensure cognitive continuity based on information that
+is: - traceable, - verified, - transmissible.
+
+Updated PAC-007 architecture
+
+PAC-006 extracts candidate information from conversations.
+
+PAC-007 is responsible for selection and classification.
+
+Pipeline:
+
+Information extracted ↓ Decision 1: KEEP or IGNORE ↓ If KEEP: Decision
+2: USER or PROJECT ↓ If PROJECT: Decision 3: Which project? ↓ Memory
+commit (future PAC-007.3)
+
+Examples
+
+-   “My eyes are blue”
+    -   keep = true
+    -   category = user
+-   “PAC is a subsystem of Atlas”
+    -   keep = true
+    -   category = project
+    -   project = Atlas
+-   “ok”
+    -   keep = false
+-   “haha”
+    -   keep = false
+
+Design rationale
+
+Atlas should not try to determine whether information is universally
+true. Instead, it should determine:
+
+1.  Should this information be kept for future continuity?
+2.  If yes, does it belong to the user or to a project?
+3.  If it belongs to a project, which one?
+
+This decision supersedes the previous idea of manual validation for
+PAC-007.2 and becomes the current architectural direction.

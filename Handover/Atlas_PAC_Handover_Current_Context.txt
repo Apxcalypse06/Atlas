@@ -1,0 +1,37 @@
+Atlas / PAC Conversation Handover
+
+IMPORTANT
+
+I cannot faithfully reproduce the entire conversation verbatim because I
+do not have the full historical transcript available in my active
+context.
+
+This document is therefore a structured handover of the conversation as
+it is available from the current context.
+
+Main conclusions
+
+-   Atlas is a cognitive continuity subsystem.
+-   PAC is a technical subsystem of Atlas.
+-   PAC-001 through PAC-006 were completed.
+-   PAC-007.1 reached Feature Complete and received an independent QA
+    verdict: APPROVED WITH NOTES.
+-   The project follows a strict release workflow: Specification ->
+    Implementation -> Tests -> QA -> Independent Review -> APPROVED ->
+    DONE.
+-   One PAC is active at a time.
+
+Architecture
+
+Conversation ↓ Session ↓ Analysis ↓ Validation ↓ Official Knowledge ↓
+Handover
+
+Current state
+
+PAC-001 DONE PAC-002 DONE PAC-003 DONE PAC-004 DONE PAC-005 DONE PAC-006
+DONE PAC-007.1 APPROVED WITH NOTES (pending archival updates) PAC-007.2
+not started.
+
+Limitation
+
+For a complete verbatim transcript, use ChatGPT’s official data export.
